@@ -24,12 +24,8 @@
 
 {% block sonata_javascript_config %}
     {{ parent() }}
-     {#Turn off confirm exit if turned on since it fails with JS library#}
-    {% if sonata_admin.adminPool.getOption('confirm_exit') %}
-        <script>
-            window.SONATA_CONFIG = {CONFIRM_EXIT: false};
-        </script>
-    {% endif %}
+    {#Turn off confirm exit if turned on since it fails with JS library#}
+
 {% endblock %}
 
 {% block form %}
@@ -60,13 +56,13 @@
                         <ul class="nav nav-tabs" id="formtabs">
                             <!-- Tab nav -->
                         </ul>
-                        <form class="form-horizontal" id="components">
+                        <div class="form-horizontal" id="components">
                             <fieldset>
                                 <div class="tab-content">
                                     <!-- Tabs of snippets go here -->
                                 </div>
                             </fieldset>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 <!-- / Components -->

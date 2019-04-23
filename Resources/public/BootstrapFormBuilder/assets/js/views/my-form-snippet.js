@@ -1,26 +1,26 @@
 define([
-       "jquery", "underscore", "class",
-       "views/snippet",
+  "jquery", "underscore", "class",
+  "views/snippet",
 ], function(
-  $, _, Class,
-  SnippetView
+    $, _, Class,
+    SnippetView
 ){
   return SnippetView.extend({
     init: function(options){
-    	this._super(options);
-        
-        // class name is actually not needed;
-        this.clsname = "MyFormSnippetView";
-        this.parentModel = this.options.parentModel;
-        this.options = _.omit(this.options, 'parentModel');
+      this._super(options);
+
+      // class name is actually not needed;
+      this.clsname = "MyFormSnippetView";
+      this.parentModel = this.options.parentModel;
+      this.options = _.omit(this.options, 'parentModel');
     },
-    
+
     events:{
       "click"   : "preventPropagation" //stops checkbox / radio reacting.
       , "mousedown" : "mouseDownHandler"
       , "mouseup"   : "mouseUpHandler"
-    }, 
-    
+    },
+
     mouseDownHandler : function(mouseDownEvent){
       mouseDownEvent.stopPropagation();
       mouseDownEvent.preventDefault();
@@ -34,35 +34,35 @@ define([
       if(this.model.get("title") !== "Form Name"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
-            Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
-            Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
+              Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
+              Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
           ){
             that.$el.popover('destroy');
-            $("#build > form > fieldset").trigger("mySnippetDrag", [mouseDownEvent, 
-                                                  that.model, {at: that.$el.index()}]);
+            $("#build > #target > fieldset").trigger("mySnippetDrag", [mouseDownEvent,
+              that.model, {at: that.$el.index()}]);
             that.mouseUpHandler();
           };
         });
       }
-    }, 
-    
+    },
+
     preventPropagation: function(e) {
       e.stopPropagation();
       e.preventDefault();
     },
-    
+
     mouseUpHandler : function(mouseUpEvent) {
-        $("body").off("mousemove");
+      $("body").off("mousemove");
     },
-    
+
     saveHandler : function(boundContext) {
       return function(mouseEvent) {
         mouseEvent.preventDefault();
         var fields = $(".popover .field");
         _.each(fields, function(e){
 
-          var $e = $(e), 
-              type = $e.attr("data-type"), 
+          var $e = $(e),
+              type = $e.attr("data-type"),
               name = $e.attr("id");
 
           switch(type) {
@@ -77,11 +77,11 @@ define([
               break;
             case "textarea-split":
               boundContext.model.setField(name,
-                _.chain($e.val().split("\n"))
-                  .map(function(t){return $.trim(t)})
-                  .filter(function(t){return t.length > 0})
-                  .value()
-                  );
+                  _.chain($e.val().split("\n"))
+                      .map(function(t){return $.trim(t)})
+                      .filter(function(t){return t.length > 0})
+                      .value()
+              );
               break;
             case "select":
               var valarr = _.map($e.find("option"), function(e){
@@ -91,12 +91,12 @@ define([
               break;
           }
         });
-        boundContext.parentModel.change(boundContext.model, 
-                         {at:boundContext.$el.index()});
+        boundContext.parentModel.change(boundContext.model,
+            {at:boundContext.$el.index()});
         $(".popover").remove();
       }
-    }, 
-    
+    },
+
     cancelHandler : function(boundContext) {
       return function(mouseEvent) {
         mouseEvent.preventDefault();
