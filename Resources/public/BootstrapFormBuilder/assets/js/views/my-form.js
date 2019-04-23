@@ -1,11 +1,11 @@
 define([
-  "jquery", "mustache", "underscore", "class",
-  "views/temp-snippet",
-  "text!templates/app/renderform.html"
+       "jquery", "mustache", "underscore", "class",
+       "views/temp-snippet",
+       "text!templates/app/renderform.html"
 ], function(
-    $, Mustache, _, Class,
-    TempSnippetView,
-    _renderForm
+  $, Mustache, _, Class,
+  TempSnippetView,
+  _renderForm
 ){
   return Class.extend({
 
@@ -43,13 +43,13 @@ define([
 
       this.toJson();
 
-      this.$el.appendTo("#build > #target");
+      this.$el.appendTo("#build > form");
     },
 
 
     toJson: function() {
-      var jsonString = JSON.stringify(this.collection.data);
-      $("#jsonrender").val(jsonString);
+        var jsonString = JSON.stringify(this.collection.data);
+        $("#jsonrender").val(jsonString);
     },
 
     getBottomAbove: function(eventY){
@@ -71,7 +71,7 @@ define([
     },
 
     handleSnippetDrag: function(mySnippetDragEvent, mouseEvent, snippetModel,
-                                removalOption) {
+       removalOption) {
       var temp_snip = new TempSnippetView({model: snippetModel});
       $("body").append(temp_snip.render());
       this.collection.remove(snippetModel, removalOption);
@@ -82,10 +82,10 @@ define([
       $(".target").removeClass("target");
       if(mouseEvent.pageX >= this.$build.offset().left  &&
           mouseEvent.pageX < (this.$build.width() + this.$build.offset().left
-              + widthOffset) &&
+                                                               + widthOffset) &&
           mouseEvent.pageY >= this.$build.offset().top &&
           mouseEvent.pageY < (this.$build.height() + this.$build.offset().top)
-      ){
+          ){
 
         $(this.getBottomAbove(mouseEvent.pageY)).addClass("target");
       } else {

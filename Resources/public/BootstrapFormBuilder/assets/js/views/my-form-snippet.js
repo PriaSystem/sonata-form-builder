@@ -1,18 +1,18 @@
 define([
-  "jquery", "underscore", "class",
-  "views/snippet",
+       "jquery", "underscore", "class",
+       "views/snippet",
 ], function(
-    $, _, Class,
-    SnippetView
+  $, _, Class,
+  SnippetView
 ){
   return SnippetView.extend({
     init: function(options){
-      this._super(options);
+    	this._super(options);
 
-      // class name is actually not needed;
-      this.clsname = "MyFormSnippetView";
-      this.parentModel = this.options.parentModel;
-      this.options = _.omit(this.options, 'parentModel');
+        // class name is actually not needed;
+        this.clsname = "MyFormSnippetView";
+        this.parentModel = this.options.parentModel;
+        this.options = _.omit(this.options, 'parentModel');
     },
 
     events:{
@@ -34,12 +34,12 @@ define([
       if(this.model.get("title") !== "Form Name"){
         $("body").on("mousemove", function(mouseMoveEvent){
           if(
-              Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
-              Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
+            Math.abs(mouseDownEvent.pageX - mouseMoveEvent.pageX) > 10 ||
+            Math.abs(mouseDownEvent.pageY - mouseMoveEvent.pageY) > 10
           ){
             that.$el.popover('destroy');
-            $("#build > #target > fieldset").trigger("mySnippetDrag", [mouseDownEvent,
-              that.model, {at: that.$el.index()}]);
+            $("#build > form > fieldset").trigger("mySnippetDrag", [mouseDownEvent,
+                                                  that.model, {at: that.$el.index()}]);
             that.mouseUpHandler();
           };
         });
@@ -52,7 +52,7 @@ define([
     },
 
     mouseUpHandler : function(mouseUpEvent) {
-      $("body").off("mousemove");
+        $("body").off("mousemove");
     },
 
     saveHandler : function(boundContext) {
@@ -77,11 +77,11 @@ define([
               break;
             case "textarea-split":
               boundContext.model.setField(name,
-                  _.chain($e.val().split("\n"))
-                      .map(function(t){return $.trim(t)})
-                      .filter(function(t){return t.length > 0})
-                      .value()
-              );
+                _.chain($e.val().split("\n"))
+                  .map(function(t){return $.trim(t)})
+                  .filter(function(t){return t.length > 0})
+                  .value()
+                  );
               break;
             case "select":
               var valarr = _.map($e.find("option"), function(e){
@@ -92,7 +92,7 @@ define([
           }
         });
         boundContext.parentModel.change(boundContext.model,
-            {at:boundContext.$el.index()});
+                         {at:boundContext.$el.index()});
         $(".popover").remove();
       }
     },

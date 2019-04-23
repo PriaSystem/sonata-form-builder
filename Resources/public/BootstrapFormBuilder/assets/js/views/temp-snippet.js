@@ -1,10 +1,10 @@
 define([
-  "jquery", "underscore", "mustache",
-  "views/snippet",
-  "text!templates/app/temp.html"
+       "jquery", "underscore", "mustache",
+       "views/snippet",
+       "text!templates/app/temp.html"
 ], function(
-    $, _, Mustache,
-    SnippetView, _tempTemplate
+  $, _, Mustache,
+  SnippetView, _tempTemplate
 ){
   return SnippetView.extend({
     init: function(options){
@@ -21,7 +21,7 @@ define([
     },
 
     postRender: function(mouseEvent){
-      this.tempForm  = this.$el.find("#target");
+      this.tempForm  = this.$el.find("form")[0];
       this.halfHeight = Math.floor(this.tempForm.clientHeight/2);
       this.halfWidth  = Math.floor(this.tempForm.clientWidth/2);
       this.centerOnEvent(mouseEvent);
@@ -40,7 +40,7 @@ define([
       this.tempForm.style.left = (mouseX - this.halfWidth) + "px";
       // Make sure the element has been drawn and
       // has height in the dom before triggering.
-      $("#build > #target > fieldset").trigger("tempMove", [mouseEvent, this.halfWidth]);
+      $("#build > form > fieldset").trigger("tempMove", [mouseEvent, this.halfWidth]);
     },
 
 
@@ -51,7 +51,7 @@ define([
 
     mouseUpHandler: function(mouseEvent){
       mouseEvent.preventDefault();
-      $("#build > #target > fieldset").trigger("tempDrop", [mouseEvent, this.model, this.halfWidth]);
+      $("#build > form > fieldset").trigger("tempDrop", [mouseEvent, this.model, this.halfWidth]);
       this.$el.remove();
     }
   });
