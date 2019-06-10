@@ -14,6 +14,9 @@ use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints\Email;
@@ -27,7 +30,7 @@ class FormBuilderFactory
      */
     public function setFieldEmailinput($formBuilder, $key, $elem)
     {
-        $formBuilder->add('email_'.$key, 'email', array(
+        $formBuilder->add('email_'.$key, Email::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
             'help_block' => $elem->fields->helptext->value,
@@ -47,7 +50,7 @@ class FormBuilderFactory
      */
     public function setFieldDateinput($formBuilder, $key, $elem)
     {
-        $formBuilder->add('date_'.$key, 'text', array(
+        $formBuilder->add('date_'.$key, TextType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
             'help_label' => $elem->fields->helptext->value,
@@ -95,7 +98,7 @@ class FormBuilderFactory
      */
     public function setFieldPostalcodeinput($formBuilder, $key, $elem)
     {
-        $formBuilder->add('postalcode_'.$key, 'number', array(
+        $formBuilder->add('postalcode_'.$key, NumberType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
             'help_block' => $elem->fields->helptext->value,
@@ -113,7 +116,7 @@ class FormBuilderFactory
      */
     public function setFieldTextinput($formBuilder, $key, $elem)
     {
-        $formBuilder->add('text_'.$key, 'text', array(
+        $formBuilder->add('text_'.$key, TextType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
             'help_block' => $elem->fields->helptext->value,
@@ -130,7 +133,7 @@ class FormBuilderFactory
      */
     public function setFieldTextarea($formBuilder, $key, $elem)
     {
-        $formBuilder->add('textarea_'.$key, 'textarea', array(
+        $formBuilder->add('textarea_'.$key, TextareaType::class, array(
             'required' => false,
             'label' => $elem->fields->label->value,
             'help_block' => $elem->fields->helptext->value,
@@ -147,7 +150,7 @@ class FormBuilderFactory
      */
     public function setFieldSelectbasic($formBuilder, $key, $elem)
     {
-        $formBuilder->add('choice_'.$key, 'choice', array(
+        $formBuilder->add('choice_'.$key, ChoiceType::class, array(
             'label' => $elem->fields->label->value,
             'choices' => array_flip($elem->fields->options->value),
             'required' => false,
@@ -162,7 +165,7 @@ class FormBuilderFactory
      */
     public function setFieldSelectmultiple($formBuilder, $key, $elem)
     {
-        $formBuilder->add('choice_'.$key, 'choice', array(
+        $formBuilder->add('choice_'.$key, ChoiceType::class, array(
             'label' => $elem->fields->label->value,
             'choices' => array_flip($elem->fields->options->value),
             'multiple' => true,
@@ -177,7 +180,7 @@ class FormBuilderFactory
      */
     public function setFieldMultipleradios($formBuilder, $key, $elem)
     {
-        $formBuilder->add('radio_'.$key, 'choice', array(
+        $formBuilder->add('radio_'.$key, ChoiceType::class, array(
             'label' => $elem->fields->label->value,
             'choices' => array_flip($elem->fields->radios->value),
             'multiple' => false,
@@ -194,7 +197,7 @@ class FormBuilderFactory
      */
     public function setFieldMultiplecheckboxes($formBuilder, $key, $elem)
     {
-        $formBuilder->add('checkbox_'.$key, 'choice', array(
+        $formBuilder->add('checkbox_'.$key, ChoiceType::class, array(
             'label' => $elem->fields->label->value,
             'choices' => array_flip($elem->fields->checkboxes->value),
             'multiple' => true,
