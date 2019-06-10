@@ -33,7 +33,7 @@ class FormBuilderFactory
         $formBuilder->add('email_'.$key, Email::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
             'attr' => array(
                 'placeholder' => $elem->fields->placeholder->value,
             ),
@@ -77,7 +77,7 @@ class FormBuilderFactory
         $formBuilder->add('telephone_'.$key, class_exists(TelType::class) ? TelType::class : TextType::class, [
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
             'attr' => [
                 'class' => 'telephone ',
                 'placeholder' => $elem->fields->placeholder->value,
@@ -101,7 +101,7 @@ class FormBuilderFactory
         $formBuilder->add('postalcode_'.$key, NumberType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
             'attr' => array(
                 'class' => 'postalcode ',
                 'placeholder' => $elem->fields->placeholder->value,
@@ -119,7 +119,7 @@ class FormBuilderFactory
         $formBuilder->add('text_'.$key, TextType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
             'attr' => array(
                 'placeholder' => $elem->fields->placeholder->value,
             ),
@@ -136,7 +136,7 @@ class FormBuilderFactory
         $formBuilder->add('textarea_'.$key, TextareaType::class, array(
             'required' => false,
             'label' => $elem->fields->label->value,
-            'help_block' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
             'attr' => array(
                 'placeholder' => $elem->fields->textarea->value,
             ),
@@ -295,7 +295,7 @@ class FormBuilderFactory
             'label_attr' => [
                 'style' => 'display:none;',
             ],
-            'help_block' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
         ));
 
         return array('name' => 'captcha_'.$key, 'size' => 'col-sm-6');
