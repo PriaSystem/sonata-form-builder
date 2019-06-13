@@ -54,7 +54,7 @@ class FormBuilderFactory
         $formBuilder->add('date_'.$key, TextType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
-            'help_label' => $elem->fields->helptext->value,
+            'help' => $elem->fields->helptext->value,
             'attr' => array(
                 'class' => 'date js-datepicker',
                 'placeholder' => $elem->fields->placeholder->value,
