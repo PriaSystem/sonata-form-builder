@@ -23,7 +23,6 @@ use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\EqualTo;
 use Symfony\Component\Validator\Constraints\Regex;
-use Sonata\Form\Type\DatePickerType;
 
 class FormBuilderFactory
 {
@@ -52,14 +51,20 @@ class FormBuilderFactory
      */
     public function setFieldDateinput($formBuilder, $key, $elem)
     {
-        $formBuilder->add('date_'.$key, DatePickerType::class, array(
+        $formBuilder->add('date_'.$key, TextType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
             'help' => $elem->fields->helptext->value,
             'attr' => array(
                 'class' => 'date js-datepicker',
                 'placeholder' => $elem->fields->placeholder->value,
-            )
+            ),
+            'constraints' => array(
+                new Regex([
+                    'pattern' =>  "/^(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-[0-9]{4}$/",
+                    'message' => 'Invalid format: dd-mm-yyyy'
+                ]),
+            ),
         ));
 
         return array('name' => 'date_'.$key, 'size' => $this->getSelectedValue($elem->fields->inputwidth->value));
