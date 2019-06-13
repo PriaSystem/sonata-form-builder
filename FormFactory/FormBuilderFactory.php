@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Symfony\Component\Validator\Constraints\Email;
@@ -30,7 +31,7 @@ class FormBuilderFactory
      */
     public function setFieldEmailinput($formBuilder, $key, $elem)
     {
-        $formBuilder->add('email_'.$key, Email::class, array(
+        $formBuilder->add('email_'.$key, EmailType::class, array(
             'required' => $elem->fields->required->value,
             'label' => $elem->fields->label->value,
             'help' => $elem->fields->helptext->value,
