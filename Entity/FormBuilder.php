@@ -66,6 +66,20 @@ class FormBuilder
     /**
      * @var string
      *
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="script", type="text", nullable=true)
+     */
+    private $script;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
@@ -171,6 +185,38 @@ class FormBuilder
     public function getRecipient()
     {
         return $this->recipient;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return array
+     */
+    public function getScript()
+    {
+        return $this->script;
+    }
+
+    /**
+     * @param array $script
+     */
+    public function setScript($script)
+    {
+        $this->script = $script;
     }
 
     /**
