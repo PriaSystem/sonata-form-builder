@@ -55,7 +55,9 @@ class FormBuilderAdmin extends Admin
         $formMapper
             ->add('json', HiddenType::class)
             ->add('title', TextType::class)
-            ->add('script', TextareaType::class)
+            ->add('script', TextareaType::class,[
+                'required' => false,
+            ])
             ->add('name', TextType::class)
             ->add('subject', TextType::class, [
                 'sonata_help' => "You can use &lt;Internal Key&gt; to add variables to your subject. Example: This email is from &lt;Name&gt;"
