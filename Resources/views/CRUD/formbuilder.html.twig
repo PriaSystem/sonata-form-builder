@@ -19,6 +19,13 @@
                 $('#{{ admin.uniqid }}_json').val(value);
             } );
         });
+
+        {% if sonata_admin.adminPool.getOption('confirm_exit') %}
+        if (typeof Admin !== "undefined") {
+            Admin.read_config();
+            Admin.config['CONFIRM_EXIT'] = false;
+        }
+        {% endif %}
     </script>
 {% endblock %}
 
