@@ -19,6 +19,15 @@ class FormBuilderAdmin extends Admin
 {
     protected $container;
 
+    protected $datagridValues = [
+
+        '_page' => 1,
+
+        '_sort_order' => 'DESC',
+
+        '_sort_by' => 'id',
+    ];
+
     public function __construct($code, $class, $baseControllerName, ContainerInterface $container)
     {
         $this->container = $container;
@@ -42,8 +51,15 @@ class FormBuilderAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->add('id')
             ->addIdentifier('name')
             ->add('recipient')
+            ->add('_action', null, [
+                'actions' => [
+                    'edit' => [],
+                    'delete' => [],
+                ],
+            ]);
         ;
     }
 
