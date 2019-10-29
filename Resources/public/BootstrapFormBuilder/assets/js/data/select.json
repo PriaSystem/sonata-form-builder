@@ -1,88 +1,28 @@
 [
   {
-    "title": "Select Basic",
+    "title": "Výbér jedné možnosti",
     "typefield":"selectbasic",
     "fields": {
       "label": {
-        "label": "Label Text",
+        "label": "Interní název",
         "type": "input",
-        "value": "Select Basic"
+        "value": "Výběr"
       },
       "key": {
         "type": "input",
-        "label": "Internal Key",
+        "label": "Klíčové slovo (nutné vyplnit)",
         "value": ""
       },
       "options": {
-        "label": "Options",
+        "label": "Možnosti (na každý řádek jedna)",
         "type": "textarea-split",
         "value": [
-          "Option one",
-          "Option two"
+          "První možnost",
+          "Druhá možnost"
         ]
       },
       "inputsize": {
-        "label": "Input Size",
-        "type": "select",
-        "value": [
-          {
-            "value": "col-md-1",
-            "label": "Mini",
-            "selected": false
-          },
-          {
-            "value": "col-md-2",
-            "label": "Small",
-            "selected": false
-          },
-          {
-            "value": "col-md-4",
-            "label": "Medium",
-            "selected": false
-          },
-          {
-            "value": "col-md-5",
-            "label": "Large",
-            "selected": true
-          },
-          {
-            "value": "col-md-6",
-            "label": "Xlarge",
-            "selected": false
-          },
-          {
-            "value": "col-md-8",
-            "label": "Xxlarge",
-            "selected": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "title": "Select Multiple",
-    "typefield":"selectmultiple",
-    "fields": {
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Select Multiple"
-      },
-      "key": {
-        "type": "input",
-        "label": "Internal Key",
-        "value": ""
-      },
-      "options": {
-        "label": "Options",
-        "type": "textarea-split",
-        "value": [
-          "Option one",
-          "Option two"
-        ]
-      },
-      "inputsize": {
-        "label": "Input Size",
+        "label": "Šířka pole",
         "type": "select",
         "value": [
           {

@@ -3,323 +3,89 @@
         "fields": {
             "inputwidth": {
                 "type": "select",
-                "label": "Input Width",
+                "label": "Šířka pole",
                 "value": [
                     {
-                        "label": "Short",
+                        "label": "1/3 řádku",
                         "value": "col-sm-4",
                         "selected": false
                     },
                     {
-                        "label": "Medium",
+                        "label": "1/2 řádku",
                         "value": "col-sm-6",
-                        "selected": true
+                        "selected": false
                     },
                     {
-                        "label": "Long",
+                        "label": "celý řádkek",
                         "value": "col-sm-8",
-                        "selected": false
+                        "selected": true
                     }
                 ]
             },
             "label": {
                 "type": "input",
-                "label": "Label Text",
-                "value": "Text Input"
+                "label": "Interní název",
+                "value": "Interní název"
             },
             "key": {
                 "type": "input",
-                "label": "Internal Key",
+                "label": "Klíčové slovo (nutné vyplnit)",
                 "value": ""
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "help"
             },
             "placeholder": {
                 "type": "input",
-                "label": "Placeholder",
-                "value": "placeholder"
+                "label": "Klíčové slovo (nutné vyplnit)",
+                "value": ""
             },
             "required": {
                 "type": "checkbox",
-                "label": "Required",
+                "label": "Musí být zadáno",
                 "value": false
             }
         },
-        "title": "Text Input",
+        "title": "Textové pole",
         "typefield": "textinput"
     },
     {
         "fields": {
             "inputwidth": {
                 "type": "select",
-                "label": "Input Width",
+                "label": "Šířka pole",
                 "value": [
                     {
-                        "label": "Short",
+                        "label": "1/3 řádku",
                         "value": "col-sm-4",
                         "selected": false
                     },
                     {
-                        "label": "Medium",
+                        "label": "1/2 řádku",
                         "value": "col-sm-6",
-                        "selected": true
+                        "selected": false
                     },
                     {
-                        "label": "Long",
+                        "label": "celý řádkek",
                         "value": "col-sm-8",
-                        "selected": false
+                        "selected": true
                     }
                 ]
             },
             "label": {
                 "type": "input",
-                "label": "Label Text",
-                "value": "Adress Email"
+                "label": "Interní název",
+                "value": "Interní název"
             },
             "key": {
                 "type": "input",
-                "label": "Internal Key",
+                "label": "Klíčové slovo (nutné vyplnit)",
                 "value": ""
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "A valid Email adress"
-            },
-            "placeholder": {
-                "type": "input",
-                "label": "Placeholder",
-                "value": "exemple@exemple.com"
-            },
-            "required": {
-                "type": "checkbox",
-                "label": "Required",
-                "value": false
-            }
-        },
-        "title": "Email Input",
-        "typefield": "emailinput"
-    },
-    {
-        "fields": {
-            "inputwidth": {
-                "type": "select",
-                "label": "Input Width",
-                "value": [
-                    {
-                        "label": "Short",
-                        "value": "col-sm-4",
-                        "selected": false
-                    },
-                    {
-                        "label": "Medium",
-                        "value": "col-sm-6",
-                        "selected": true
-                    },
-                    {
-                        "label": "Long",
-                        "value": "col-sm-8",
-                        "selected": false
-                    }
-                ]
-            },
-            "label": {
-                "type": "input",
-                "label": "Label Text",
-                "value": "Phone number"
-            },
-            "key": {
-                "type": "input",
-                "label": "Internal Key",
-                "value": ""
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "Type a valid telephone number"
-            },
-            "placeholder": {
-                "type": "input",
-                "label": "Placeholder",
-                "value": "0612345678"
-            },
-            "required": {
-                "type": "checkbox",
-                "label": "Required",
-                "value": false
-            }
-        },
-        "title": "Telephone Input",
-        "typefield": "telephoneinput"
-    },
-    {
-        "fields": {
-            "inputwidth": {
-                "type": "select",
-                "label": "Input Width",
-                "value": [
-                    {
-                        "label": "Short",
-                        "value": "col-sm-4",
-                        "selected": false
-                    },
-                    {
-                        "label": "Medium",
-                        "value": "col-sm-6",
-                        "selected": true
-                    },
-                    {
-                        "label": "Long",
-                        "value": "col-sm-8",
-                        "selected": false
-                    }
-                ]
-            },
-            "label": {
-                "type": "input",
-                "label": "Label Text",
-                "value": "Postal Code"
-            },
-            "key": {
-                "type": "input",
-                "label": "Internal Key",
-                "value": ""
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "help"
-            },
-            "placeholder": {
-                "type": "input",
-                "label": "Placeholder",
-                "value": "13006"
-            },
-            "required": {
-                "type": "checkbox",
-                "label": "Required",
-                "value": false
-            }
-        },
-        "title": "PostalCode Input",
-        "typefield": "postalcodeinput"
-    },
-    {
-        "fields": {
-            "inputwidth": {
-                "type": "select",
-                "label": "Input Width",
-                "value": [
-                    {
-                        "label": "Short",
-                        "value": "col-sm-4",
-                        "selected": false
-                    },
-                    {
-                        "label": "Medium",
-                        "value": "col-sm-6",
-                        "selected": true
-                    },
-                    {
-                        "label": "Long",
-                        "value": "col-sm-8",
-                        "selected": false
-                    }
-                ]
-            },
-            "label": {
-                "type": "input",
-                "label": "Label Text",
-                "value": "Date select"
-            },
-            "key": {
-                "type": "input",
-                "label": "Internal Key",
-                "value": ""
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "help"
-            },
-            "placeholder": {
-                "type": "input",
-                "label": "Placeholder",
-                "value": "jj/mm/aaaa"
-            },
-            "required": {
-                "type": "checkbox",
-                "label": "Required",
-                "value": false
-            }
-        },
-        "title": "Date Input",
-        "typefield": "dateinput"
-    },
-    {
-        "fields": {
-            "inputwidth": {
-                "type": "select",
-                "label": "Input Width",
-                "value": [
-                    {
-                        "label": "Short",
-                        "value": "col-sm-4",
-                        "selected": false
-                    },
-                    {
-                        "label": "Medium",
-                        "value": "col-sm-6",
-                        "selected": true
-                    },
-                    {
-                        "label": "Long",
-                        "value": "col-sm-8",
-                        "selected": false
-                    }
-                ]
-            },
-            "label": {
-                "type": "input",
-                "label": "Label Text",
-                "value": "Text Area"
-            },
-            "key": {
-                "type": "input",
-                "label": "Internal Key",
-                "value": ""
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "help"
             },
             "textarea": {
                 "type": "textarea",
-                "label": "Starting Text",
-                "value": "default text"
+                "label": "Klíčové slovo (nutné vyplnit)",
+                "value": ""
             }
         },
-        "title": "Text Area",
+        "title": "Textové pole více řádků",
         "typefield": "textarea"
-    },
-    {
-        "fields": {
-            "label": {
-                "type": "input",
-                "label": "Captcha Text",
-                "value": "Captcha"
-            },
-            "helptext": {
-                "type": "input",
-                "label": "Help Text",
-                "value": "help"
-            }
-        },
-        "title": "Captcha",
-        "typefield": "captcha"
     }
 ]

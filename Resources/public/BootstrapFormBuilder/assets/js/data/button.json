@@ -1,25 +1,20 @@
 [
   {
-    "title": "Single Button",
+    "title": "Tlačítko",
     "typefield":"singlebutton",
     "fields": {
       "id": {
-        "label": "ID / Name",
+        "label": "Klíčové slovo (nutné vyplnit)",
         "type": "input",
-        "value": "singlebutton"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Single Button"
+        "value": "submit"
       },
       "buttonlabel": {
-        "label": "Button Label",
+        "label": "Klíčové slovo (nutné vyplnit)",
         "type": "input",
-        "value": "Submit"
+        "value": "submit"
       },
       "buttontype": {
-        "label": "Button Type",
+        "label": "Typ tlačítka",
         "type": "select",
         "value": [
           {
@@ -66,156 +61,6 @@
           {
             "value": "submit",
             "label": "Submit",
-            "selected": true
-          },
-          {
-            "value": "reset",
-            "label": "Reset",
-            "selected": false
-          }
-        ]
-      }
-    }
-  },
-  {
-    "title": "Double Button",
-    "typefield":"doublebutton",
-    "fields": {
-      "id": {
-        "label": "Button 1 ID / Name",
-        "type": "input",
-        "value": "button1id"
-      },
-      "label": {
-        "label": "Label Text",
-        "type": "input",
-        "value": "Double Button"
-      },
-      "button1label": {
-        "label": "Button Label",
-        "type": "input",
-        "value": "Submit"
-      },
-      "button1type": {
-        "label": "Button Type",
-        "type": "select",
-        "value": [
-          {
-            "value": "btn-default",
-            "label": "Default",
-            "selected": false
-          },
-          {
-            "value": "btn-primary",
-            "label": "Primary",
-            "selected": true
-          },
-          {
-            "value": "btn-info",
-            "label": "Info",
-            "selected": false
-          },
-          {
-            "value": "btn-success",
-            "label": "Success",
-            "selected": false
-          },
-          {
-            "value": "btn-warning",
-            "label": "Warning",
-            "selected": false
-          },
-          {
-            "value": "btn-danger",
-            "label": "Danger",
-            "selected": false
-          },
-          {
-            "value": "btn-inverse",
-            "label": "Inverse",
-            "selected": false
-          }
-        ]
-      },
-      "button1action": {
-        "label": "Button Action",
-        "type": "select",
-        "value": [
-          {
-            "value": "submit",
-            "label": "Submit",
-            "selected": true
-          },
-          {
-            "value": "reset",
-            "label": "Reset",
-            "selected": false
-          }
-        ]
-      },
-      "id2": {
-        "label": "Button 2 ID / Name",
-        "type": "input",
-        "value": "button2id"
-      },
-      "button2label": {
-        "label": "Button Label",
-        "type": "input",
-        "value": "Reset"
-      },
-      "button2type": {
-        "label": "Button Type",
-        "type": "select",
-        "value": [
-          {
-            "value": "btn-default",
-            "label": "Default",
-            "selected": false
-          },
-          {
-            "value": "btn-primary",
-            "label": "Primary",
-            "selected": false
-          },
-          {
-            "value": "btn-info",
-            "label": "Info",
-            "selected": false
-          },
-          {
-            "value": "btn-success",
-            "label": "Success",
-            "selected": false
-          },
-          {
-            "value": "btn-warning",
-            "label": "Warning",
-            "selected": false
-          },
-          {
-            "value": "btn-danger",
-            "label": "Danger",
-            "selected": true
-          },
-          {
-            "value": "btn-inverse",
-            "label": "Inverse",
-            "selected": false
-          }
-        ]
-      },
-      "button2action": {
-        "label": "Button Action",
-        "type": "select",
-        "value": [
-          {
-            "value": "submit",
-            "label": "Submit",
-            "selected": false
-          },
-          {
-            "value": "reset",
-            "label": "Reset",
             "selected": true
           }
         ]

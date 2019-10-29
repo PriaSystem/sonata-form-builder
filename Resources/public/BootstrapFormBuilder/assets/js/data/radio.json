@@ -1,77 +1,49 @@
 [
   {
-    "title": "Multiple Radios",
+    "title": "Výběr jedné z více možností",
     "typefield":"multipleradios",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "radios"
-      },
       "label": {
-        "label": "Label Text",
+        "label": "Název voleb",
         "type": "input",
-        "value": "Multiple Radios"
+        "value": "Název voleb"
       },
       "key": {
         "type": "input",
-        "label": "Internal Key",
+        "label": "Klíčové slovo (nutné vyplnit)",
         "value": ""
       },
       "radios": {
-        "label": "Radios",
+        "label": "Možnosti (na každý řádek jedna)",
         "type": "textarea-split",
         "value": [
-          "Option one",
-          "Option two"
+          "První možnost",
+          "Druhá možnost"
         ]
       }
     }
   },
   {
-    "title": "Multiple Checkboxes",
+    "title": "Výběr více možností",
     "typefield":"multiplecheckboxes",
     "fields": {
-      "name": {
-        "label": "Group Name",
-        "type": "input",
-        "value": "checkboxes"
-      },
       "label": {
-        "label": "Label Text",
+        "label": "Název voleb",
         "type": "input",
-        "value": "Multiple Checkboxes"
+        "value": "Název voleb"
       },
       "key": {
         "type": "input",
-        "label": "Internal Key",
+        "label": "Klíčové slovo (nutné vyplnit)",
         "value": ""
       },
       "checkboxes": {
-        "label": "Checkboxes",
+        "label": "Možnosti (na každý řádek jedna)",
         "type": "textarea-split",
-        "value": ["Option one","Option two"]
-      }
-    }
-  },
-  {
-    "title": "Privacy check",
-    "typefield":"privacycheckbox",
-    "fields": {
-      "text": {
-        "label": "Privacy text",
-        "type": "textarea",
-        "value": "I agree to the"
-      },
-      "cta": {
-        "label": "Call to action",
-        "type": "input",
-        "value": "terms of service"
-      },
-      "url": {
-        "label": "Link",
-        "type": "input",
-        "value": "https://www.google.com/policies/terms/"
+        "value": [
+          "První možnost",
+          "Druhá možnost"
+        ]
       }
     }
   }
