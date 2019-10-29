@@ -24,22 +24,22 @@ define([
   return {
     initialize: function(){ 
     	new TabView({
-    		title: "Input",
+    		title: "Textová pole",
     		collection: new SnippetsCollection(JSON.parse(inputJSON)),
     	});
     	
     	new TabView({
-        	title: "Radios / Checkboxes",
+        	title: "Zaškrtávátka",
         	collection: new SnippetsCollection(JSON.parse(radioJSON)),
       	});
       	
       	new TabView({
-        	title: "Select",
+        	title: "Výběr",
         	collection: new SnippetsCollection(JSON.parse(selectJSON)),
       	});
       	
       	new TabView({
-        	title: "Buttons",
+        	title: "Tlačítka",
         	collection: new SnippetsCollection(JSON.parse(buttonJSON)),
       	});
       	

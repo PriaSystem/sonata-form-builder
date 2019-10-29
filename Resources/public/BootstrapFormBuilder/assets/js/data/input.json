@@ -16,7 +16,7 @@
                         "selected": false
                     },
                     {
-                        "label": "celý řádkek",
+                        "label": "celý řádek",
                         "value": "col-sm-8",
                         "selected": true
                     }
@@ -24,8 +24,8 @@
             },
             "label": {
                 "type": "input",
-                "label": "Interní název",
-                "value": "Interní název"
+                "label": "Interní název pole",
+                "value": "Interní název pole"
             },
             "key": {
                 "type": "input",
@@ -63,7 +63,7 @@
                         "selected": false
                     },
                     {
-                        "label": "celý řádkek",
+                        "label": "celý řádek",
                         "value": "col-sm-8",
                         "selected": true
                     }
@@ -71,8 +71,8 @@
             },
             "label": {
                 "type": "input",
-                "label": "Interní název",
-                "value": "Interní název"
+                "label": "Interní název bloku",
+                "value": "Interní název bloku"
             },
             "key": {
                 "type": "input",
